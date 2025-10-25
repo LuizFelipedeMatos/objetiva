@@ -7,6 +7,36 @@
         <priority>1.0</priority>
     </url>
         <url>
+        <loc>https://objetivalabs.com.br/blog</loc>
+        <lastmod>2025-11-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
+        <url>
+        <loc>https://objetivalabs.com.br/black-friday-2025</loc>
+        <lastmod>2025-11-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
+        <url>
+        <loc>https://objetivalabs.com.br/google-ads-pratica</loc>
+        <lastmod>2025-11-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
+        <url>
+        <loc>https://objetivalabs.com.br/seo-conteudo</loc>
+        <lastmod>2025-11-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
+        <url>
+        <loc>https://objetivalabs.com.br/seo-google-ads</loc>
+        <lastmod>2025-11-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
+        <url>
         <loc>https://objetivalabs.com.br/servicos</loc>
         <lastmod>2025-11-11</lastmod>
         <changefreq>always</changefreq>
@@ -61,4 +91,3 @@
         <priority>0.5</priority>
     </url>
 </urlset>
-
