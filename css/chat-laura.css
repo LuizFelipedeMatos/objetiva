@@ -1,4 +1,8 @@
 /* Custom styles for chat-inteligente-laura.html */
+/* Forçando esquema de cores claro para garantir que o modo escuro não afete as cores do chat */
+:root {
+    color-scheme: light;
+}
 
 /* Hero Section for Laura Chat */
 .page-header {
