@@ -6,7 +6,7 @@ RewriteEngine On
 # Regra 1A: Redirecionar URLs com .html para a versão sem extensão (Melhor para SEO)
 # Se o usuário acessar pagina.html, ele será redirecionado para /pagina
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\ HTTP/
-RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
+RewriteRule ^([^.]+)\.html$ /%1 [R=301,L]
 
 # Regra 1B: Reescrita interna para servir o arquivo .html quando a extensão for omitida
 # O usuário acessa /pagina e o servidor serve internamente /pagina.html
@@ -15,14 +15,15 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [L]
 
-# 2. Redirecionamento de www para não-www (Opcional, descomente se necessário)
+# 2. Redirecionamento de www para não-www (ou vice-versa, dependendo da preferência)
+# Exemplo para forçar não-www:
 # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 # RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
 
-# 3. Redirecionamento de HTTP para HTTPS (Opcional, descomente se necessário)
+# 3. Redirecionamento de HTTP para HTTPS (Recomendado para segurança)
+# Se você quiser forçar HTTPS, use:
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # 4. Página de erro 404 personalizada (Opcional, se houver um arquivo 404.html)
 # ErrorDocument 404 /404.html
-
