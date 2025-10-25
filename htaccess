@@ -1,0 +1,21 @@
+# Ativar o motor de reescrita
+RewriteEngine On
+
+# 1. Remover a extensão .html
+# Acessa /pagina ao invés de /pagina.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# 2. Redirecionamento de www para não-www (ou vice-versa, dependendo da preferência)
+# Se você quiser redirecionar para não-www, use:
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
+
+# 3. Redirecionamento de HTTP para HTTPS (Recomendado para segurança)
+# Se você quiser forçar HTTPS, use:
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 4. Página de erro 404 personalizada (Opcional, se houver um arquivo 404.html)
+# ErrorDocument 404 /404.html

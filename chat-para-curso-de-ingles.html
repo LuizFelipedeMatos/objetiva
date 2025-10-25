@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot de Atendimento para Cursos de Inglês & Educação</title>
+    <meta name="title" content="Chatbot de Atendimento para Cursos de Inglês & Educação">
+    <meta name="description" content="Engaje estudantes e responsáveis com informações sobre cursos, metodologia, horários e matrículas. Laura responde dúvidas frequentes e direciona para testes de nivelamento e inscrições.">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/chat-laura.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://www.objetivalabs.com.br/chat-para-curso-de-ingles">
+
+        <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.objetivalabs.com.br/chat-para-curso-de-ingles">
+    <meta property="og:title" content="Chatbot de Atendimento para Cursos de Inglês & Educação">
+    <meta property="og:description" content="Engaje estudantes e responsáveis com informações sobre cursos, metodologia, horários e matrículas. Laura responde dúvidas frequentes e direciona para testes de nivelamento e inscrições.">
+    <meta property="og:image" content="./images/segmento-ingles.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.objetivalabs.com.br/chat-para-curso-de-ingles">
+    <meta property="twitter:title" content="Chatbot de Atendimento para Cursos de Inglês & Educação">
+    <meta property="twitter:description" content="Engaje estudantes e responsáveis com informações sobre cursos, metodologia, horários e matrículas. Laura responde dúvidas frequentes e direciona para testes de nivelamento e inscrições.">
+    <meta property="twitter:image" content="./images/segmento-ingles.jpg">
+    <meta name="robots" content="index">
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VG6CTC4WC3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VG6CTC4WC3');
+</script>
+
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="./index.html">
+                        <img src="./images/logo.png" alt="Objetiva Labs" class="logo">
+                    </a>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="./sobre.html" class="nav-link">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./servicos.html" class="nav-link">Serviços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./contato.html" class="nav-link">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./chat-inteligente-laura.html" class="nav-link active">Chatbot</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1>Chatbot de Atendimento Para Cursos de Inglês & Educação</h1>
+                    <em><p>Encontre o curso ideal para você!</p></em>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-chat-demo">
+            <div class="container">
+                <div class="section-header">
+                    <h2>🎓 Experimente o Chatbot para Cursos de Inglês</h2>
+                    <p>Descubra o curso perfeito para o seu nível e objetivos</p>
+                </div>
+                <div class="laura-chat-container" id="laura-chat-widget">
+                    <div class="laura-chat-header">
+                        <h2>Escola de Inglês</h2>
+                        <p>Sua Consultora Educacional</p>
+                    </div>
+                    <div class="laura-chat-messages" id="laura-messages">
+                        <!-- Messages will be added here dynamically -->
+                    </div>
+                    <div class="laura-chat-input">
+                        <input type="text" class="laura-input" id="laura-input" placeholder="Digite sua mensagem...">
+                        <button class="laura-send-btn" id="laura-send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+ <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Pronto para impulsionar seu negócio?</h2>
+                    <p>Solicite um orçamento personalizado e descubra como nossos serviços podem transformar seus resultados.</p>
+                    <div class="cta-buttons">
+                        <a href="./contato.html" class="btn btn-primary">Solicitar Orçamento</a>
+                        <a href="https://wa.me/5521982684928?text=Olá! Preciso de suporte ou tenho dúvidas sobre os serviços da Objetiva Labs." class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./images/logo-white.png" alt="Objetiva Labs">
+                    </div>
+                    <p>Transformando negócios através do Marketing Digital e Tecnologia.</p>
+                    <div class="social-links">
+                        <!--  <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>-->
+                        <a href="https://www.instagram.com/objetivalabs" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/objetiva-labs-agencia-de-marketing-digital" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                       <!-- <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>-->
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="./sobre.html">Sobre Nós</a></li>
+                        <a href="./servicos.html">Serviços</a></li>
+                        <li><a href="./contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="./servicos.html#seo">SEO</a></li>
+                        <li><a href="./servicos.html#trafego-pago">Tráfego Pago</a></li>
+                        <li><a href="./servicos.html#marketing-digital">Marketing Digital</a></li>
+                        <li><a href="./servicos.html#business-intelligence">Business Intelligence</a></li>
+                        <li><a href="./servicos.html#desenvolvimento">Desenvolvimento Web</a></li>
+                        <li><a href="./servicos.html#consultoria">Consultoria Digital</a></li>
+                        <li><a href="./chat-inteligente-laura.html">Chatbot de Atendimento</a></li>
+                    </ul>
+                </div>
+        <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +55 (21) 98268-4928</li>
+                        <li><i class="fas fa-envelope"></i> contato@objetivalabs.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Rio de Janeiro, RJ</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Objetiva Labs. Todos os direitos reservados.</p>
+                    <div class="footer-links">
+                      <a href="./politica-de-privacidade.html">Política de Privacidade</a>
+                        <a href="./termos-de-uso.html">Termos de Uso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cookieBanner = document.getElementById("cookieBanner");
+            const acceptCookiesBtn = document.getElementById("acceptCookies");
+
+            if (!localStorage.getItem("cookieAccepted")) {
+                cookieBanner.classList.remove("hidden");
+            }
+
+            acceptCookiesBtn.addEventListener("click", function() {
+                localStorage.setItem("cookieAccepted", "true");
+                cookieBanner.classList.add("hidden");
+            });
+        });
+    </script>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <a href="#top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/5521982684928?text=Olá! Gostaria de solicitar um orçamento personalizado para meu projeto." target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./js/script.js"></script>
+   <script src="./js/chat-laura-ingles-completo.js"></script>
+</body>
+</html>
+
+

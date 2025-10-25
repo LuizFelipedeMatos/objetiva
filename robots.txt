@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://objetivalabs.com/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.pdf$
+
+# Allow all CSS and JS files
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+

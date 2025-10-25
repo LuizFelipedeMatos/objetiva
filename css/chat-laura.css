@@ -1,0 +1,777 @@
+/* Custom styles for chat-inteligente-laura.html */
+
+/* Hero Section for Laura Chat */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    padding: 100px 0 60px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+/* Section Chat Features */
+.section-chat-features {
+    padding: 80px 0;
+    background-color: var(--light-color);
+    text-align: center;
+}
+
+.section-chat-features .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.section-chat-features .section-header p {
+    font-size: 1.25rem;
+    color: var(--gray-600);
+}
+
+.section-chat-features .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.section-chat-features .feature-item {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: var(--transition);
+    display: flex; /* Ensure flex for icon and text alignment */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: none; /* Override previous specific style */
+}
+
+.section-chat-features .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+.section-chat-features .feature-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    background: none; /* Override previous specific style */
+    width: auto; /* Override previous specific style */
+    height: auto; /* Override previous specific style */
+    border-radius: 0; /* Override previous specific style */
+    display: block; /* Ensure icon is block for proper spacing */
+}
+
+.section-chat-features .feature-item h3 {
+    font-size: 1.5rem;
+    color: var(--gray-900);
+    margin-bottom: 15px;
+}
+
+.section-chat-features .feature-item p {
+    font-size: 1rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* Section Chat Demo */
+.section-chat-demo {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.section-chat-demo .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.section-chat-demo .section-header p {
+    font-size: 1.25rem;
+    color: var(--gray-600);
+}
+
+/* Laura Chat Widget */
+.laura-chat-container {
+    max-width: 900px; /* Increased width for desktop */
+    margin: 40px auto;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    height: 700px; /* Fixed height for chat area */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--gray-200);
+}
+
+.laura-chat-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.laura-chat-header h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.laura-chat-header p {
+    opacity: 0.9;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.laura-chat-messages {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    background: var(--light-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.laura-message {
+    /* Adicionar display: flex para que o contêiner de opções possa ser alinhado dentro da mensagem */
+    display: flex; 
+    flex-direction: column; 
+     align-self: flex-start; /* Padrão para mensagens do bot */
+    /* Adicionando flex-direction: column para que o bloco de opções possa ser alinhado separadamente */
+    flex-direction: column;
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--border-radius);
+    max-width: 85%;
+    word-wrap: break-word;
+    animation: fadeInUp 0.4s ease;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.laura-message.bot {
+    background: var(--gray-100);
+    color: var(--gray-800);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--gray-200);
+    /* Manter o alinhamento da mensagem de texto do bot */
+    align-self: flex-start;
+    max-width: 85%;
+}
+
+.laura-message.bot .laura-options {
+    /* As opções dentro da mensagem do bot devem ser alinhadas à direita */
+    align-self: flex-end;
+    margin-left: 0; /* Remover margin-left: auto se houver */
+    max-width: 100%; /* Ocupar a largura total da bolha de mensagem */
+}
+
+/* Novo estilo para a bolha de opções */
+.laura-options-bubble {
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--border-radius);
+    max-width: 85%;
+    word-wrap: break-word;
+    animation: fadeInUp 0.4s ease;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    background: transparent; /* A bolha de opções não terá fundo */
+    align-self: flex-end; /* Alinhar a bolha de opções à direita */
+    margin-left: auto;
+    margin-top: 1rem;
+    padding: 0;
+    /* Remover sombra e borda para que apenas os botões apareçam */
+    box-shadow: none;
+    border: none;
+}
+    background: var(--gray-100);
+    color: var(--gray-800);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--gray-200);
+}
+
+.laura-message.user {
+    background: var(--primary-color);
+    color: var(--white);
+    align-self: flex-end;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 2px 8px rgba(var(--primary-color-rgb), 0.2);
+    /* Manter o alinhamento da mensagem de texto do usuário */
+    align-self: flex-end;
+    max-width: 85%;
+}
+    background: var(--primary-color);
+    color: var(--white);
+    align-self: flex-end;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 2px 8px rgba(var(--primary-color-rgb), 0.2);
+}
+
+.laura-options {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões fiquem em linha e quebrem se não couberem */
+    justify-content: flex-end; /* Alinhar os botões dentro do contêiner à direita */
+    gap: 0.8rem; /* Aumentado para melhorar a área de clique */
+    margin-top: 0.8rem;
+    /* Alinhar o contêiner de opções à direita, como se fossem mensagens do usuário */
+    align-self: flex-end; 
+    margin-left: auto;
+    max-width: 100%; /* Ocupar a largura total do contêiner pai */
+}
+
+.laura-option-btn {
+    /* Estilo de botão conforme solicitado: Fundo branco, borda sutil, cantos arredondados, aparência de balão de mensagem */
+    background: var(--white);
+    color: var(--gray-800); /* Cor do texto mais neutra */
+    border: 1px solid var(--gray-300);
+    padding: 0.7rem 1.2rem;
+    border-radius: 25px; /* Mais arredondado */
+    white-space: normal; /* Permitir quebra de linha para botões longos */
+    max-width: 100%; /* Garantir que o botão não ultrapasse o contêiner */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    margin: 6px;
+}
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.laura-option-btn:hover {
+    /* Efeito de Hover: Aumenta a escala e adiciona sombra para um efeito 3D sutil */
+    background: var(--gray-100); /* Mudar a cor do hover para algo mais sutil */
+    color: var(--primary-color);
+    transform: scale(1.02); /* Aumenta ligeiramente o botão */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+    border-color: var(--primary-color);
+}
+
+.laura-whatsapp-btn {
+    background: var(--whatsapp-color) !important;
+    color: var(--white) !important;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    text-align: center;
+    transition: var(--transition);
+    margin-top: 1rem;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 10px rgba(var(--whatsapp-color-rgb), 0.3);
+}
+
+.laura-whatsapp-btn:hover {
+    background: #128c7e !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(var(--whatsapp-color-rgb), 0.4);
+}
+
+.laura-chat-input {
+    padding: 1rem;
+    background: var(--gray-100);
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.laura-input {
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 20px;
+    outline: none;
+    font-size: 0.95rem;
+    min-width: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    transition: var(--transition);
+}
+
+.laura-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.15);
+}
+
+.laura-send-btn {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(var(--primary-color-rgb), 0.3);
+}
+
+.laura-send-btn:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(var(--primary-color-rgb), 0.4);
+}
+
+.laura-typing {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: var(--gray-100);
+    color: var(--gray-800);
+    border-bottom-left-radius: 4px;
+    padding: 0.8rem 1.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--gray-200);
+    align-self: flex-start;
+}
+
+.laura-typing span {
+    height: 8px;
+    width: 8px;
+    margin: 0 3px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.laura-typing span:nth-child(1) { animation-delay: -0.32s; }
+.laura-typing span:nth-child(2) { animation-delay: -0.16s; }
+.laura-typing span:nth-child(3) { animation-delay: 0s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+
+/* Scrollbar customization */
+.laura-chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+.laura-chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+.laura-chat-messages::-webkit-scrollbar-thumb {
+    background: var(--gray-400);
+    border-radius: 3px;
+}
+.laura-chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-500);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .laura-chat-container {
+        max-width: 700px;
+        height: 650px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    .page-header p {
+        font-size: 1rem;
+    }
+    .section-chat-features .section-header h2,
+    .section-chat-demo .section-header h2 {
+        font-size: 2rem;
+    }
+    .section-chat-features .section-header p,
+    .section-chat-demo .section-header p {
+        font-size: 1rem;
+    }
+    .section-chat-features .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .laura-chat-container {
+        max-width: 95%;
+        height: 600px;
+    }
+    .laura-chat-header {
+        padding: 1rem;
+    }
+    .laura-chat-header h2 {
+        font-size: 1.5rem;
+    }
+    .laura-chat-messages {
+        padding: 1rem;
+    }
+    .laura-message {
+    /* Adicionar display: flex para que o contêiner de opções possa ser alinhado dentro da mensagem */
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; /* Padrão para mensagens do bot */
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+    .laura-option-btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+    .laura-whatsapp-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .laura-chat-input {
+        padding: 0.8rem;
+        gap: 0.8rem; /* Aumentado para melhorar a área de clique */
+    }
+    .laura-input {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+    .laura-send-btn {
+        width: 40px;
+        height: 40px;
+        padding: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    .page-header p {
+        font-size: 0.9rem;
+    }
+    .section-chat-features .section-header h2,
+    .section-chat-demo .section-header h2 {
+        font-size: 1.8rem;
+    }
+    .section-chat-features .feature-item {
+        padding: 20px;
+    }
+    .section-chat-features .feature-icon {
+        font-size: 2.5rem;
+    }
+    .section-chat-features .feature-item h3 {
+        font-size: 1.3rem;
+    }
+    .laura-chat-container {
+        height: 550px;
+    }
+    .laura-chat-header h2 {
+        font-size: 1.3rem;
+    }
+}
+
+
+/* Section Segments - Adaptação por Segmento */
+.section-segments {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.section-segments .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-segments .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.section-segments .section-header p {
+    font-size: 1.25rem;
+    color: var(--gray-600);
+}
+
+.segments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.segment-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.segment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.segment-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.segment-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.segment-card:hover .segment-image {
+    transform: scale(1.1);
+}
+
+.segment-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+    transition: opacity 0.4s ease;
+}
+
+.segment-card:hover .segment-overlay {
+    opacity: 0.7;
+}
+
+.segment-content {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.segment-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+/* Segmento Comida - Vermelho */
+.segment-food .segment-icon {
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+    color: var(--white);
+    box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+}
+
+.segment-food:hover .segment-icon {
+    transform: rotate(360deg);
+    box-shadow: 0 8px 20px rgba(220, 38, 38, 0.5);
+}
+
+.segment-food h3 {
+    color: #dc2626;
+}
+
+/* Segmento Advocacia - Verde (baseado no site Romer Carvalho) */
+.segment-law .segment-icon {
+    background: linear-gradient(135deg, #2f5d4f, #1e3a2f);
+    color: var(--white);
+    box-shadow: 0 5px 15px rgba(47, 93, 79, 0.3);
+}
+
+.segment-law:hover .segment-icon {
+    transform: rotate(360deg);
+    box-shadow: 0 8px 20px rgba(47, 93, 79, 0.5);
+}
+
+.segment-law h3 {
+    color: #2f5d4f;
+}
+
+/* Segmento Curso de Inglês - Preto */
+.segment-english .segment-icon {
+    background: linear-gradient(135deg, #1f2937, #111827);
+    color: var(--white);
+    box-shadow: 0 5px 15px rgba(31, 41, 55, 0.3);
+}
+
+.segment-english:hover .segment-icon {
+    transform: rotate(360deg);
+    box-shadow: 0 8px 20px rgba(31, 41, 55, 0.5);
+}
+
+.segment-english h3 {
+    color: #1f2937;
+}
+
+.segment-content h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.segment-content p {
+    font-size: 1rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.segment-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.segment-features li {
+    font-size: 0.95rem;
+    color: var(--gray-700);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.segment-features li i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.segment-reference {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-200);
+}
+
+.segment-reference small {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+}
+
+.segment-reference a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.segment-reference a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Responsive Design for Segments */
+@media (max-width: 1024px) {
+    .segments-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-segments {
+        padding: 60px 0;
+    }
+
+    .section-segments .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .section-segments .section-header p {
+        font-size: 1rem;
+    }
+
+    .segments-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .segment-image-wrapper {
+        height: 200px;
+    }
+
+    .segment-content {
+        padding: 25px;
+    }
+
+    .segment-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.75rem;
+    }
+
+    .segment-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-segments .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .segment-content {
+        padding: 20px;
+    }
+
+    .segment-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.5rem;
+    }
+
+    .segment-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .segment-features li {
+        font-size: 0.9rem;
+    }
+}
+
