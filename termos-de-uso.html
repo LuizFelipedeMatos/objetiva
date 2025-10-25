@@ -36,23 +36,23 @@
         <nav class="navbar">
             <div class="container">
                 <div class="nav-brand">
-                    <a href="./index.html">
+                    <a href="https://www.objetivalabs.com.br">
                         <img src="./images/logo.png" alt="Objetiva Labs" class="logo">
                     </a>
                 </div>
                 <div class="nav-menu" id="nav-menu">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a href="./sobre.html" class="nav-link">Sobre</a>
+                            <a href="sobre.html" class="nav-link">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./servicos.html" class="nav-link">Serviços</a>
+                            <a href="servicos.html" class="nav-link">Serviços</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./contato.html" class="nav-link">Contato</a>
+                            <a href="contato.html" class="nav-link">Contato</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./chat-inteligente-laura.html" class="nav-link">Chatbot</a>
+                            <a href="chat-inteligente-laura.html" class="nav-link">Chatbot</a>
                         </li>
                     </ul>
                 </div>
@@ -102,19 +102,19 @@
         </section>
     </main>
 
- <!-- Footer -->
+<!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                     <div class="footer-logo">
-                         <a href="./index.html">
-                        <img src="./images/logo-white.png" alt="Objetiva Labs" class="logo">
-                    </a>
-                    </div>
+                        <div class="footer-logo">
+                            <a href="https://www.objetivalabs.com.br">
+                            <img src="./images/logo-white.png" alt="Objetiva Labs" class="logo">
+                        </a>
+                        </div>
                     <p>Transformando negócios através do Marketing Digital e Tecnologia.</p>
                     <div class="social-links">
-                        <!--  <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>-->
+                       <!--  <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>-->
                         <a href="https://www.instagram.com/objetivalabs" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/company/objetiva-labs-agencia-de-marketing-digital" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                        <!-- <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>-->
@@ -123,21 +123,21 @@
                 <div class="footer-section">
                     <h3>Empresa</h3>
                     <ul>
-                        <li><a href="./sobre.html">Sobre Nós</a></li>
-                        <a href="./servicos.html">Serviços</a></li>
-                        <li><a href="./contato.html">Contato</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <a href="servicos.html">Serviços</a></li>
+                        <li><a href="contato.html">Contato</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Serviços</h3>
                     <ul>
-                        <li><a href="./servicos.html#seo">SEO</a></li>
-                        <li><a href="./servicos.html#trafego-pago">Tráfego Pago</a></li>
-                        <li><a href="./servicos.html#marketing-digital">Marketing Digital</a></li>
-                        <li><a href="./servicos.html#business-intelligence">Business Intelligence</a></li>
-                        <li><a href="./servicos.html#desenvolvimento">Desenvolvimento Web</a></li>
-                        <li><a href="./servicos.html#consultoria">Consultoria Digital</a></li>
-                        <li><a href="./chat-inteligente-laura.html">Chatbot de Atendimento</a></li>
+                        <li><a href="servicos.html#seo">SEO</a></li>
+                        <li><a href="servicos.html#trafego-pago">Tráfego Pago</a></li>
+                        <li><a href="servicos.html#marketing-digital">Marketing Digital</a></li>
+                        <li><a href="servicos.html#business-intelligence">Business Intelligence</a></li>
+                        <li><a href="servicos.html#desenvolvimento">Desenvolvimento Web</a></li>
+                        <li><a href="servicos.html#consultoria">Consultoria Digital</a></li>
+                        <li><a href="chat-inteligente-laura.html">Chatbot de Atendimento</a></li>
                     </ul>
                 </div>
         <div class="footer-section">
@@ -153,15 +153,47 @@
                 <div class="footer-bottom-content">
                     <p>&copy; 2025 Objetiva Labs. Todos os direitos reservados.</p>
                     <div class="footer-links">
-                        <a href="./politica-de-privacidade.html">Política de Privacidade</a>
-                        <a href="./termos-de-uso.html">Termos de Uso</a>
+                        <a href="politica-de-privacidade.html">Política de Privacidade</a>
+                        <a href="termos-de-uso.html">Termos de Uso</a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <a href="#top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+
+        <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/5521982684928?text=Olá! Preciso de suporte ou tenho dúvidas sobre os serviços da Objetiva Labs." target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+
+
     <script src="./js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cookieBanner = document.getElementById("cookieBanner");
+            const acceptCookiesBtn = document.getElementById("acceptCookies");
+
+            if (!localStorage.getItem("cookieAccepted")) {
+                cookieBanner.classList.remove("hidden");
+            }
+
+            acceptCookiesBtn.addEventListener("click", function() {
+                localStorage.setItem("cookieAccepted", "true");
+                cookieBanner.classList.add("hidden");
+            });
+        });
+    </script>
+    
 </body>
 </html>
 
