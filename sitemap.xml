@@ -30,6 +30,18 @@
         <changefreq>always</changefreq>
         <priority>1.0</priority>
     </url>
+        <url>
+        <loc>https://objetivalabs.com.br/lp/criacao-de-sites.html</loc>
+        <lastmod>2025-11-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
+        <url>
+        <loc>https://objetivalabs.com.br/lp/chatbot-de-atendimento.html</loc>
+        <lastmod>2025-11-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
     <url>
         <loc>https://objetivalabs.com.br/lp/gerenciamento-de-redes-sociais.html</loc>
         <lastmod>2025-11-11</lastmod>
