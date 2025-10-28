@@ -203,7 +203,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Passo 0: Coletar nome
                 userName = userInput;
                 studentData.name = userInput;
-                addBotMessageWithTypingEffect(`Prazer em conhecê-lo, <strong>${userName}</strong>! 😊<br><br>Qual é o seu nível atual de inglês?`, false, "", createLevelOptions());
+                addBotMessageWithTypingEffect(`Prazer em conhecê-lo, ${userName}.`, false, "",);
+                addBotMessageWithTypingEffect(`Qual é o seu nível atual de inglês?`, false, "", createLevelOptions());
                 step++;
             } else if (step === 1) {
                 // Passo 1: Selecionar nível ou voltar
@@ -229,53 +230,62 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 
                 studentData.courseLevel = userInput;
-                addBotMessageWithTypingEffect(`Excelente! 🎯<br><br>Em qual área você gostaria de focar seus estudos?`, false, "", createDomainOptions());
+                addBotMessageWithTypingEffect(`Excelente! 🎯`, false, "");
+                addBotMessageWithTypingEffect(`Em qual área você gostaria de focar seus estudos?`, false, "", createDomainOptions());
                 step++;
             } else if (step === 2) {
                 // Passo 2: Selecionar domínio ou voltar
                 if (userInput === 'voltar_nivel') {
                     studentData.courseLevel = "";
-                    addBotMessageWithTypingEffect(`Sem problema! 😊<br><br>Qual é o seu nível atual de inglês?`, false, "", createLevelOptions());
+                    addBotMessageWithTypingEffect(`Sem problema! 😊`, false, "");
+                    addBotMessageWithTypingEffect(`Qual é o seu nível atual de inglês?`, false, "", createLevelOptions());
                     step = 1;
                     return;
                 }
                 
                 studentData.courseDomain = userInput;
-                addBotMessageWithTypingEffect(`Ótima escolha! 👍<br><br>Você é aluno de outra escola de inglês e deseja fazer transferência?`, false, "", createTransferOptions());
+                addBotMessageWithTypingEffect(`Ótima escolha! 👍`, false, "");
+                 addBotMessageWithTypingEffect(`Você é aluno de outra escola de inglês e deseja fazer transferência?`, false, "", createTransferOptions());
                 step++;
             } else if (step === 3) {
                 // Passo 3: Transferência ou voltar
                 if (userInput === 'voltar_dominio') {
                     studentData.courseDomain = "";
-                    addBotMessageWithTypingEffect(`Sem problema! 😊<br><br>Em qual área você gostaria de focar seus estudos?`, false, "", createDomainOptions());
+                    addBotMessageWithTypingEffect(`Sem problema! 😊`, false, "");
+                    addBotMessageWithTypingEffect(`Em qual área você gostaria de focar seus estudos?`, false, "", createDomainOptions());
                     step = 2;
                     return;
                 }
                 
                 if (userInput === 'sim_transferencia') {
                     studentData.isTransfer = true;
-                    addBotMessageWithTypingEffect(`Que legal! 🎉 Temos condições especiais para alunos transferidos!<br><br>Gostaria de conhecer nossa unidade presencialmente?`, false, "", createVisitOptions());
+                    addBotMessageWithTypingEffect(`Que legal! 🎉 Temos condições especiais para alunos transferidos!`, false, "");
+                    addBotMessageWithTypingEffect(`Gostaria de conhecer nossa unidade presencialmente?`, false, "", createVisitOptions());
                 } else {
                     studentData.isTransfer = false;
-                    addBotMessageWithTypingEffect(`Perfeito! Vamos começar sua jornada no inglês! 🚀<br><br>Gostaria de conhecer nossa unidade presencialmente?`, false, "", createVisitOptions());
-                }
+                    addBotMessageWithTypingEffect(`Perfeito! Vamos começar sua jornada no inglês! 🚀`, false, "");
+                    addBotMessageWithTypingEffect(`Gostaria de conhecer nossa unidade presencialmente?`, false, "", createVisitOptions());
+                    }
                 step++;
             } else if (step === 4) {
                 // Passo 4: Visita à unidade ou voltar
                 if (userInput === 'voltar_transferencia') {
                     studentData.isTransfer = false;
-                    addBotMessageWithTypingEffect(`Sem problema! 😊<br><br>Você é aluno de outra escola de inglês e deseja fazer transferência?`, false, "", createTransferOptions());
+                    addBotMessageWithTypingEffect(`Sem problema! 😊`, false, "",);
+                    addBotMessageWithTypingEffect(`Você é aluno de outra escola de inglês e deseja fazer transferência?`, false, "", createTransferOptions());
                     step = 3;
                     return;
                 }
                 
                 if (userInput === 'sim_visita') {
                     studentData.wantsVisit = true;
-                    addBotMessageWithTypingEffect(`Excelente! 🏫<br><br>Por favor, informe seu telefone para agendarmos sua visita:<br><br><em>(Digite o telefone no campo abaixo)</em>`);
+                    addBotMessageWithTypingEffect(`Excelente! 🏫`);
+                    addBotMessageWithTypingEffect(`Por favor, informe seu telefone no campo abaixo para entrarmos em contato:`);
                     step++;
                 } else {
                     studentData.wantsVisit = false;
-                    addBotMessageWithTypingEffect(`Sem problema! Podemos continuar online. 💻<br><br>Por favor, informe seu telefone para entrarmos em contato:<br><br><em>(Digite o telefone no campo abaixo)</em>`);
+                    addBotMessageWithTypingEffect(`Sem problema! Podemos continuar online.`);
+                    addBotMessageWithTypingEffect(`Por favor, informe seu telefone no campo abaixo para entrarmos em contato:`);
                     step++;
                 }
             } else if (step === 5) {
@@ -287,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                 setTimeout(() => {
                     addBotMessageWithTypingEffect(`Deseja confirmar e falar com um consultor?`, false, "", [
-                        { text: '✅ Confirmar e Falar com Consultor', value: 'confirmar_consultor' },
+                        { text: '✅ Confirma', value: 'confirmar_consultor' },
                         { text: '⬅️ Voltar e Alterar', value: 'voltar_visita' }
                     ]);
                 }, 2000);
@@ -297,13 +307,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (userInput === 'voltar_visita') {
                     studentData.phone = "";
                     studentData.wantsVisit = false;
-                    addBotMessageWithTypingEffect(`Sem problema! 😊<br><br>Gostaria de conhecer nossa unidade presencialmente?`, false, "", createVisitOptions());
+                    addBotMessageWithTypingEffect(`Sem problema! 😊`, false, "",);
+                    addBotMessageWithTypingEffect(`Gostaria de conhecer nossa unidade presencialmente?`, false, "", createVisitOptions());
                     step = 4;
                     return;
                 }
                 
                 // Confirmar e enviar para WhatsApp
-                addBotMessageWithTypingEffect(`Perfeito, <strong>${studentData.name}</strong>! 🎉<br><br>Vou conectar você com um consultor especializado.<br><br>Clique no botão abaixo:`);
+                addBotMessageWithTypingEffect(`Perfeito, ${studentData.name}!`);
+                addBotMessageWithTypingEffect(`Vou conectar você com um consultor especializado.`);
+                addBotMessageWithTypingEffect(`Clique no botão abaixo:`);
                 
                 let message = `Olá! Meu nome é ${studentData.name} e gostaria de informações sobre os cursos de inglês.\n\n`;
                 message += `📚 Nível: ${studentData.courseLevel}\n`;
@@ -316,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const whatsappLink = `https://wa.me/5521982684928?text=${encodeURIComponent(message)}`;
                 
                 setTimeout(() => {
-                    addBotMessageWithTypingEffect("💬 Falar com Consultor no WhatsApp", true, whatsappLink);
+                    addBotMessageWithTypingEffect("💬 Falar com Consultor", true, whatsappLink);
                 }, 1000);
                 
                 // Reset
@@ -341,7 +354,9 @@ document.addEventListener("DOMContentLoaded", function () {
             case 'informacoes_curso':
                 currentFlow = "informacoes_curso";
                 step = 0;
-                addBotMessageWithTypingEffect("Ótimo! Vou te ajudar a encontrar o curso ideal. 😊<br><br>Primeiro, qual é o seu nome?");
+                addBotMessageWithTypingEffect("Ótimo!");
+                addBotMessageWithTypingEffect("Vou te ajudar a encontrar o curso ideal.");
+                addBotMessageWithTypingEffect("😊 Primeiro, qual é o seu nome?");
                 break;
             case 'teste_nivelamento':
                 addBotMessageWithTypingEffect("Nosso teste de nivelamento é gratuito e ajuda a identificar seu nível atual de inglês! 📝<br><br>O teste é realizado online e leva cerca de 20 minutos.<br><br>Gostaria de agendar um teste de nivelamento?", false, "", [
@@ -350,7 +365,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 ]);
                 break;
             case 'agendar_teste':
-                addBotMessageWithTypingEffect("Perfeito! Vou te direcionar para agendar seu teste de nivelamento.<br><br>Clique no botão abaixo:");
+                addBotMessageWithTypingEffect("Perfeito!");
+                addBotMessageWithTypingEffect("Vou te direcionar para agendar seu teste de nivelamento.");
+                addBotMessageWithTypingEffect("Clique no botão abaixo:");
                 const testMessage = `Olá! Gostaria de agendar um teste de nivelamento de inglês. A assistente virtual Laura me direcionou para este contato.`;
                 const testWhatsappLink = `https://wa.me/5521982684928?text=${encodeURIComponent(testMessage)}`;
                 setTimeout(() => {
@@ -364,7 +381,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 ]);
                 break;
             case 'agendar_visita':
-                addBotMessageWithTypingEffect("Excelente! Vou te direcionar para agendar sua visita.<br><br>Clique no botão abaixo:");
+                addBotMessageWithTypingEffect("Okay!");
+                addBotMessageWithTypingEffect("Vou te direcionar para agendar sua visita.");
+                addBotMessageWithTypingEffect("Clique no botão abaixo:");
                 const visitMessage = `Olá! Gostaria de agendar uma visita à unidade para conhecer os cursos de inglês. A assistente virtual Laura me direcionou para este contato.`;
                 const visitWhatsappLink = `https://wa.me/5521982684928?text=${encodeURIComponent(visitMessage)}`;
                 setTimeout(() => {

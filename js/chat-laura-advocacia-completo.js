@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         sobre: {
             keywords: ['sobre', 'advogado', 'experiência', 'formação', 'oab'],
-            response: 'Nosso escritório conta com mais de 15 anos de experiência em diversas áreas do Direito.<br><br>👨‍⚖️ <strong>Experiência:</strong> Mais de 15 anos<br>🎓 <strong>Formação:</strong> Especializada em diversas áreas<br>🏆 <strong>Especializações:</strong><br>• Direito de Família<br>• Direito Criminal<br>• Direito Civil<br>• Direito Tributário<br><br>Atendimento humanizado e personalizado para cada cliente.'
+            response: 'Nosso escritório conta com mais de 15 anos de experiência em diversas áreas do Direito.<br><br>👨‍⚖️ <strong>Experiência:</strong> Mais de 15 anos<br>🎓 <strong>Formação:</strong> Especializada em diversas áreas<br>🏆 <strong>Especializações:</strong><br>• Direito de Família<br>• Direito Criminal<br>• Direito Civil<br>• Direito Tributário<br>• Direito Internacional<br><br>Atendimento humanizado e personalizado para cada cliente.'
         },
         contato: {
             keywords: ['contato', 'telefone', 'email', 'endereço', 'localização', 'onde'],
@@ -272,7 +272,8 @@ document.addEventListener("DOMContentLoaded", function () {
             if (step === 0) {
                 // Passo 0: Coletar nome
                 userName = userInput;
-                addBotMessageWithTypingEffect(`Olá, <strong>${userName}</strong>! 😊<br><br>Em qual região você está localizado?`, false, "", createRegionOptions());
+                addBotMessageWithTypingEffect(`Olá, ${userName}! 😊`, false, "",);
+                addBotMessageWithTypingEffect(`Em qual região você está localizado?`, false, "", createRegionOptions());
                 step++;
             } else if (step === 1) {
                 // Passo 1: Selecionar região ou voltar
@@ -284,7 +285,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 
                 userRegion = userInput;
-                addBotMessageWithTypingEffect(`Perfeito! 👍<br><br>Agora me diga: qual área do direito você precisa de ajuda?`, false, "", createAreaOptions(legalAreas));
+                addBotMessageWithTypingEffect(`Perfeito!`, false, "");
+                addBotMessageWithTypingEffect(`Agora me diga: qual área do direito você precisa de ajuda?`, false, "", createAreaOptions(legalAreas));
                 step++;
             } else if (step === 2) {
                 // Passo 2: Selecionar área ou voltar
@@ -297,7 +299,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                 userArea = userInput;
                 if (legalAreas[userArea]) {
-                    addBotMessageWithTypingEffect(`Excelente! 🎯<br><br>Dentro de <strong>${userArea}</strong>, qual é a sua necessidade específica?`, false, "", createSubAreaOptions(legalAreas[userArea]));
+                    addBotMessageWithTypingEffect(`Excelente! 🎯`, false, "",);
+                    addBotMessageWithTypingEffect(`Dentro de ${userArea}, qual é a sua necessidade específica?`, false, "", createSubAreaOptions(legalAreas[userArea]));
                     step++;
                 } else {
                     addBotMessageWithTypingEffect(`Entendi! Clique no botão abaixo para falar diretamente com o especialista via WhatsApp:`);
@@ -327,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Mostrar resumo e opções de confirmar ou voltar
                 const summary = `<strong>📋 Resumo:</strong><br><br>👤 <strong>Nome:</strong> ${userName}<br>📍 <strong>Região:</strong> ${userRegion}<br>⚖️ <strong>Área:</strong> ${userArea}<br>🎯 <strong>Necessidade:</strong> ${userSubArea}<br><br>Deseja confirmar e falar com um especialista?`;
                 addBotMessageWithTypingEffect(summary, false, "", [
-                    { text: '✅ Confirmar e Falar com Especialista', value: 'confirmar_especialista' },
+                    { text: '✅ Sim', value: 'confirmar_especialista' },
                     { text: '⬅️ Voltar e Alterar', value: 'voltar_subarea' }
                 ]);
                 step++;
@@ -341,7 +344,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 
                 // Confirmar e enviar para WhatsApp
-                addBotMessageWithTypingEffect(`Perfeito, <strong>${userName}</strong>! 🎉<br><br>Vou conectar você com um especialista.<br><br>Clique no botão abaixo:`);
+                addBotMessageWithTypingEffect(`Perfeito ${userName}.`);
+                addBotMessageWithTypingEffect(`Vou conectar você com um especialista.`);
+                addBotMessageWithTypingEffect(`Clique no botão abaixo:`);
                 const message = `Olá! Meu nome é ${userName}, sou da região de ${userRegion} e preciso de atendimento jurídico em ${userArea}, em específico ${userSubArea}. A assistente virtual Laura me direcionou para falar com vocês. Poderiam me ajudar?`;
                 const whatsappLink = `https://wa.me/5521982684928?text=${encodeURIComponent(message)}`;
                 setTimeout(() => {

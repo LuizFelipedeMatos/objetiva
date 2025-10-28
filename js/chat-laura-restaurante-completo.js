@@ -248,7 +248,8 @@ document.addEventListener("DOMContentLoaded", function () {
             if (step === 0) {
                 // Passo 0: Coletar nome
                 userName = userInput;
-                addBotMessageWithTypingEffect(`Olá, <strong>${userName}</strong>! 😊<br><br>Qual pizza você deseja pedir hoje?`, false, "", createPizzaOptions());
+                addBotMessageWithTypingEffect(`Olá, ${userName}! 😊`, false, "");
+                addBotMessageWithTypingEffect(`Qual pizza você deseja pedir hoje?`, false, "", createPizzaOptions());
                 step++;
             } else if (step === 1) {
                 // Passo 1: Selecionar pizza ou voltar
@@ -278,7 +279,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 
                 orderData.pizzaType = userInput;
-                addBotMessageWithTypingEffect(`Ótima escolha! 🍕<br><br>Agora escolha o tamanho da sua ${userInput}:`, false, "", createSizeOptions(userInput));
+                addBotMessageWithTypingEffect(`Ótima escolha! 🍕`, false, "");
+                addBotMessageWithTypingEffect(`Agora escolha o tamanho da sua ${userInput}:`, false, "", createSizeOptions(userInput));
                 step++;
             } else if (step === 2) {
                 // Passo 2: Selecionar tamanho ou voltar
@@ -292,8 +294,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 orderData.pizzaSize = userInput;
                 orderData.pizzaPrice = pizzaMenu[orderData.pizzaType][userInput];
                 orderData.subtotal = orderData.pizzaPrice;
+                addBotMessageWithTypingEffect(`Perfeito! ${orderData.pizzaType} - ${orderData.pizzaSize} por R$ ${orderData.pizzaPrice.toFixed(2)} 👍`, false, "");
+                addBotMessageWithTypingEffect(`Gostaria de adicionar alguma bebida ao seu pedido?`, false, "", createDrinkOptions());
                 
-                addBotMessageWithTypingEffect(`Perfeito! ${orderData.pizzaType} - ${orderData.pizzaSize} por R$ ${orderData.pizzaPrice.toFixed(2)} 👍<br><br>Gostaria de adicionar alguma bebida ao seu pedido?`, false, "", createDrinkOptions());
                 step++;
             } else if (step === 3) {
                 // Passo 3: Selecionar bebida ou não, ou voltar
@@ -317,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     orderData.subtotal += orderData.drinkPrice;
                 }
                 
-                addBotMessageWithTypingEffect(`Ótimo! 💳<br><br>Qual será a forma de pagamento?`, false, "", createPaymentOptions());
+                addBotMessageWithTypingEffect(`E qual será a forma de pagamento?`, false, "", createPaymentOptions());
                 step++;
             } else if (step === 4) {
                 // Passo 4: Selecionar forma de pagamento ou voltar
@@ -332,7 +335,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 
                 orderData.paymentMethod = userInput;
-                addBotMessageWithTypingEffect(`Perfeito! 🚚<br><br>Você prefere entrega em domicílio ou retirar na loja?`, false, "", createDeliveryOptions());
+                addBotMessageWithTypingEffect(`Perfeito! Você prefere entrega em domicílio ou retirar na loja?`, false, "", createDeliveryOptions());
                 step++;
             } else if (step === 5) {
                 // Passo 5: Selecionar opção de entrega ou voltar
@@ -346,7 +349,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 orderData.deliveryOption = userInput;
                 
                 if (userInput === 'delivery') {
-                    addBotMessageWithTypingEffect(`Por favor, informe seu endereço completo para entrega:<br><br><em>(Digite o endereço no campo abaixo)</em>`);
+                    addBotMessageWithTypingEffect(`Por favor, informe seu endereço completo para entrega:`);
                     step++;
                 } else {
                     // Retirada na loja
@@ -400,7 +403,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 
                 // Confirmar e enviar para WhatsApp
-                addBotMessageWithTypingEffect(`Pedido confirmado! 🎉<br><br>Clique no botão abaixo para finalizar seu pedido via WhatsApp:`);
+                addBotMessageWithTypingEffect(`Pedido confirmado! 🎉`);
+                addBotMessageWithTypingEffect(`Clique no botão abaixo para finalizar seu pedido via WhatsApp:`);
                 
                 let message = `Olá! Meu nome é ${userName} e gostaria de fazer o seguinte pedido:\n\n`;
                 message += `🍕 Pizza: ${orderData.pizzaType}\n`;
@@ -461,7 +465,8 @@ document.addEventListener("DOMContentLoaded", function () {
             case 'fazer_pedido':
                 currentFlow = "fazer_pedido";
                 step = 0;
-                addBotMessageWithTypingEffect("Ótimo! Vou te ajudar a fazer seu pedido. 😊<br><br>Primeiro, qual é o seu nome?");
+                addBotMessageWithTypingEffect("Ótimo! Vou te ajudar a fazer seu pedido. 😊");
+                addBotMessageWithTypingEffect("Primeiro, qual é o seu nome?");
                 break;
             case 'ver_cardapio':
                 let cardapio = `<strong>📋 Nosso Cardápio:</strong><br><br>`;
