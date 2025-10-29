@@ -48,10 +48,15 @@
         <changefreq>always</changefreq>
         <priority>1.0</priority>
     </url>
-    
     <url>
         <loc>https://www.objetivalabs.com.br/lp/campanhas-de-midia-paga.html</loc>
         <lastmod>2025-10-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.objetivalabs.com.br/lp/seu-site-em-sete-dias.html</loc>
+        <lastmod>2025-10-28</lastmod>
         <changefreq>always</changefreq>
         <priority>1.0</priority>
     </url>
