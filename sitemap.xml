@@ -192,4 +192,10 @@
         <changefreq>always</changefreq>
         <priority>0.5</priority>
     </url>
+    <url>
+        <loc>https://www.objetivalabs.com.br/video-curto-formatos-imersivos.html</loc>
+        <lastmod>2025-11-07</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
 </urlset>
