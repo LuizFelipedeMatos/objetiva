@@ -204,9 +204,15 @@
         <changefreq>always</changefreq>
         <priority>1.0</priority>
     </url>
-            <url>
+        <url>
         <loc>https://www.objetivalabs.com.br/conversational-commerce-engajamento-tempo-real.html</loc>
         <lastmod>2025-11-18</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
+        <url>
+        <loc>https://www.objetivalabs.com.br/expectativas-2026-marketing-digital-ia.html</loc>
+        <lastmod>2025-12-05</lastmod>
         <changefreq>always</changefreq>
         <priority>1.0</priority>
     </url>
