@@ -701,3 +701,9 @@ window.ObjetivaLabs = {
     formatPhoneNumber
 };
 
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('a[href="blog.html"]').forEach(link => {
+        const item = link.closest("li") || link;
+        item.style.display = "none";
+    });
+});
